@@ -118,6 +118,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   walkSpeed: 4
+  sprintSpeed: 16
   maxVelocityChange: 10
 --- !u!54 &8950972457964384220
 Rigidbody:
