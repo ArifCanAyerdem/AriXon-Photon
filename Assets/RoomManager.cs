@@ -7,8 +7,7 @@ public class RoomManager : MonoBehaviourPunCallbacks
 {
 
 public GameObject Player;
-[Space]
-public Transform spawnPoint;
+[Space]public Transform spawnPoint;
 
 
     // Start is called before the first frame update
@@ -46,7 +45,7 @@ base.OnJoinedRoom();
 
 Debug.Log("Joined Lobby");
 GameObject _player =PhotonNetwork.Instantiate(Player.name, spawnPoint.position, Quaternion.identity);
-
+_player.GetComponent<PlayerSetup>().IsLocalPlayer();
 }
 
 }
