@@ -5,6 +5,12 @@ using Photon.Pun;
 
 public class RoomManager : MonoBehaviourPunCallbacks
 {
+
+public GameObject Player;
+[Space]
+public Transform spawnPoint;
+
+
     // Start is called before the first frame update
     void Start()
     {
@@ -29,6 +35,17 @@ base.OnJoinedLobby();
 PhotonNetwork.JoinOrCreateRoom("test",null,null,null);
 
 Debug.Log("Joined Lobby");
+
+
+}
+public override void OnJoinedRoom()
+    {
+
+base.OnJoinedRoom();
+
+
+Debug.Log("Joined Lobby");
+GameObject _player =PhotonNetwork.Instantiate(Player.name, spawnPoint.position, Quaternion.identity);
 
 }
 
