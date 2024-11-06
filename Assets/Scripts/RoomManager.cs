@@ -10,7 +10,8 @@ public class RoomManager : MonoBehaviourPunCallbacks
 public static RoomManager instance;
 
 public GameObject Player;
-[Space]public Transform spawnPoint;
+[Space]
+public Transform[] spawnPoints;
 public GameObject roomCam;
 
 public GameObject nameUI;
@@ -81,6 +82,8 @@ SpawnPlayer();
 
 
 public void SpawnPlayer(){
+
+Transform spawnPoint=spawnPoints[UnityEngine.Random.Range(0,spawnPoints.Length)];
 
 GameObject _player =PhotonNetwork.Instantiate(Player.name, spawnPoint.position, Quaternion.identity);
 _player.GetComponent<PlayerSetup>().IsLocalPlayer();
