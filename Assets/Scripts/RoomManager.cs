@@ -19,6 +19,8 @@ public GameObject nameUI;
 public GameObject connectingUI;
 private string nickname="unnamed";
 
+
+
 public string roomNameToJoin="test";
 
 public int kills=0;
@@ -38,7 +40,7 @@ nickname=_name;
 public void JoinRoomButtonPressed(){
 
 Debug.Log("Connecting to Photon");
-        PhotonNetwork.ConnectUsingSettings();
+        PhotonNetwork.JoinOrCreateRoom(roomNameToJoin,null,null,null);
 
         nameUI.SetActive(false);
         connectingUI.SetActive(true);
@@ -47,32 +49,7 @@ Debug.Log("Connecting to Photon");
 
 
 
-    // Start is called before the first frame update
-    void Start()
-    {
-      
-    }
-
-    
-
-    public override void OnConnectedToMaster()
-    {
-        base.OnConnectedToMaster();
-        Debug.Log("Connected to Server");
-        PhotonNetwork.JoinLobby  ();
-    }
-
-
-    public override void OnJoinedLobby()
-    {
-
-base.OnJoinedLobby();
-PhotonNetwork.JoinOrCreateRoom("test",null,null,null);
-
-Debug.Log("Joined Lobby");
-
-
-}
+  
 public override void OnJoinedRoom()
     {
 
