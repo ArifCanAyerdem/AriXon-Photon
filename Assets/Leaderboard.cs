@@ -16,6 +16,7 @@ public GameObject[] slots;
 
 public TextMeshProUGUI[] scoreTexts;
 public TextMeshProUGUI[] nameTexts;
+public TextMeshProUGUI[] kdTexts;
 
 
 void Start()
@@ -48,6 +49,17 @@ foreach(var player in sortedPlayerList){
 
 nameTexts[i].text=player.NickName;
 scoreTexts[i].text=player.GetScore().ToString();
+
+
+
+if(player.CustomProperties["kills"] != null){
+
+
+    kdTexts[i].text=player.CustomProperties["kills"]+"/"+player.CustomProperties["deaths"];
+}else{
+
+    kdTexts[i].text="0/0";
+}
 
 
 i++;

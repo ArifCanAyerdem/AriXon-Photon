@@ -23,8 +23,20 @@ public bool isLocalPlayer;
 
         if (health <= 0)
         {
-    if (isLocalPlayer)
-        RoomManager.instance.SpawnPlayer();
+
+
+
+            
+    if (isLocalPlayer){
+
+           RoomManager.instance.SpawnPlayer();
+
+           
+                    RoomManager.instance.deaths++;
+                    RoomManager.instance.SetHashes();
+    }
+       
+           
            
            
             Destroy(gameObject);

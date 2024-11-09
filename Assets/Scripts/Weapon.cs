@@ -136,6 +136,9 @@ if (hit.transform.gameObject.GetComponent<Health>())
 if (damage >= hit.transform.gameObject.GetComponent<Health>().health)
                 {
                     // Kill
+
+                    RoomManager.instance.kills++;
+                    RoomManager.instance.SetHashes();
                     PhotonNetwork.LocalPlayer.AddScore(100);
                 }
      

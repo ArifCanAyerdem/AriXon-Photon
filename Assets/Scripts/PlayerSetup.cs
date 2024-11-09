@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Photon.Pun;
 using TMPro;
+
 public class PlayerSetup : MonoBehaviour
 {
    
@@ -30,5 +31,9 @@ public void SetNickname(string _name){
     nickname = _name;
     nicknameText.text =  nickname;
 }
+
+
+
+
 
 }
