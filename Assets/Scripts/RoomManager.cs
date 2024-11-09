@@ -90,6 +90,7 @@ _player.GetComponent<PlayerSetup>().IsLocalPlayer();
 _player.GetComponent<Health>().isLocalPlayer= true;
 
 _player.GetComponent<PhotonView>().RPC("SetNickname",RpcTarget.AllBuffered,nickname);
+PhotonNetwork.LocalPlayer.NickName=nickname;
 
 }
  
