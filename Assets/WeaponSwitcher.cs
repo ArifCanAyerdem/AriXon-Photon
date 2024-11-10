@@ -1,10 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Photon.Pun;
 
 public class WeaponSwitcher : MonoBehaviour
 {
   
+  public PhotonView playerSetupView;
 public Animation _animation;
 public AnimationClip draw;
 
@@ -108,6 +110,9 @@ SelectWeapon();
 
 
     void SelectWeapon(){
+
+playerSetupView.RPC("SeTPWeapon",RpcTarget.All,selectedWeapon);
+
 
 
 if(selectedWeapon>=transform.childCount)
